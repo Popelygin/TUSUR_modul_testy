@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-02T23:28:29 YEKT" name="Default suite" finished-at="2022-06-02T23:28:29 YEKT" duration-ms="130">
+    <groups>
+    </groups>
+    <test started-at="2022-06-02T23:28:29 YEKT" name="Default test" finished-at="2022-06-02T23:28:29 YEKT" duration-ms="130">
+      <class name="online_tusur.unit_online_tusur.StudentTestNGZ5">
+        <test-method signature="testAvgAge([[Ljava.lang.String;)[pri:1, instance:online_tusur.unit_online_tusur.StudentTestNGZ5@4e7912d8]" started-at="2022-06-02T23:28:29 YEKT" name="testAvgAge" data-provider="data" finished-at="2022-06-02T23:28:29 YEKT" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@433defed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAvgAge -->
+        <test-method signature="testAvgAge([[Ljava.lang.String;)[pri:1, instance:online_tusur.unit_online_tusur.StudentTestNGZ5@4e7912d8]" started-at="2022-06-02T23:28:29 YEKT" name="testAvgAge" data-provider="data" finished-at="2022-06-02T23:28:29 YEKT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@2a693f59]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAvgAge -->
+        <test-method signature="testAvgAge([[Ljava.lang.String;)[pri:1, instance:online_tusur.unit_online_tusur.StudentTestNGZ5@4e7912d8]" started-at="2022-06-02T23:28:29 YEKT" name="testAvgAge" data-provider="data" finished-at="2022-06-02T23:28:29 YEKT" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[[Ljava.lang.String;@548a24a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAvgAge -->
+        <test-method signature="testAgeOut(int)[pri:2, instance:online_tusur.unit_online_tusur.StudentTestNGZ5@4e7912d8]" started-at="2022-06-02T23:28:29 YEKT" name="testAgeOut" finished-at="2022-06-02T23:28:29 YEKT" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100500]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAgeOut -->
+      </class> <!-- online_tusur.unit_online_tusur.StudentTestNGZ5 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

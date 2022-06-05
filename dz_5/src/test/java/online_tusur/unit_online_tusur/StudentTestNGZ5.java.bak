@@ -1,0 +1,94 @@
+package online_tusur.unit_online_tusur;
+
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class StudentTestNGZ5 
+{
+	
+	@DataProvider(name="data")
+	public String[][][] getName()
+	{
+		return new String[][][]
+				{
+					{
+						{ "Иванов", "Иван", "25" },
+						{ "Петров", "Пётр", "33" },
+						{ "Сидоров", "Антон", "42"}
+					},
+					
+					{
+						{ "Аксёнова", "Ольга", "21" },
+						{ "Рыбаков", "Александр", "40" }
+					},
+					
+					{
+						{ "Мельников", "Николай", "27" }
+					}
+				};
+	}
+	
+	
+	/* 
+	 * Параметризированный тест для метода расчёта среднего возраста avgAge().
+	 * Использование @DataProvider.
+	 */
+	@Test(dataProvider = "data", priority = 1, timeOut=150)
+	void testAvgAge(String[][] str_arr)
+	{	  
+	
+		// Количество студентов в массиве.
+		int cntStudents = str_arr.length;
+		
+		// Массив студентов.
+		Student[] student = new Student[cntStudents];
+		
+		// Счётчик суммы возраста.
+		int sumAge = 0; 
+
+		for (int i = 0; i < cntStudents; i++)
+			{		  				  
+				// Фамилия.
+				String lastName = str_arr[i][0];			  
+				// Имя.
+				String firstName = str_arr[i][1];
+				// Возраст.
+				int age = Integer.parseInt(str_arr[i][2]);
+				
+				// Считаем сумму.
+				sumAge += age;
+					  
+				// Создание и инициализация объекта класса Student.
+				student[i] = new Student(lastName, firstName, age);
+			}		  
+
+		// Рассчитанный вручную ожидаемый средний возраст.
+		double expectedAvgAge = sumAge / cntStudents;
+		// Рассчитанный методом средний возраст.
+		double actualAvgAge = Student.avgAge(student);
+		assertEquals(expectedAvgAge, actualAvgAge);
+	}
+	
+	
+	/*
+	 * Проверка возраста студента, выходящего за диапазон.
+	 * Использование @Parameters.
+	 */
+		@Test(priority = 2, timeOut=50)
+		@Parameters({"age"})
+		void testAgeOut(@Optional("100500") int age) 
+		{
+			Student s = new Student();
+			
+			s.setAge(age);
+			
+			int expectedAge = 18;
+			int actualAge = s.getAge();
+			
+			assertEquals(expectedAge, actualAge);
+		}
+}
