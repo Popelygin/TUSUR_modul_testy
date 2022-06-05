@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-03T01:13:04 YEKT" name="Default suite" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="120">
+    <groups>
+    </groups>
+    <test started-at="2022-06-03T01:13:04 YEKT" name="Default test" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="120">
+      <class name="online_tusur.unit_online_tusur.StudentTestNGZ6">
+        <test-method signature="dynamicTestStudentGetterGetFirstName()[pri:1, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@346d61be, instance params:[владимир, Петров, 34, Владимир, Петров, 34]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetFirstName" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetFirstName -->
+        <test-method signature="dynamicTestStudentGetterGetFirstName()[pri:1, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@3e6ef8ad, instance params:[Александр, иванов, 55, Александр, Иванов, 18]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetFirstName" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetFirstName -->
+        <test-method signature="dynamicTestStudentGetterGetFirstName()[pri:1, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@55536d9e, instance params:[Алексей, алексеев, 18, Алексей, Алексеев, 18]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetFirstName" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetFirstName -->
+        <test-method signature="dynamicTestStudentGetterGetLastName()[pri:10, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@346d61be, instance params:[владимир, Петров, 34, Владимир, Петров, 34]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetLastName" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetLastName -->
+        <test-method signature="dynamicTestStudentGetterGetLastName()[pri:10, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@3e6ef8ad, instance params:[Александр, иванов, 55, Александр, Иванов, 18]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetLastName" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetLastName -->
+        <test-method signature="dynamicTestStudentGetterGetLastName()[pri:10, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@55536d9e, instance params:[Алексей, алексеев, 18, Алексей, Алексеев, 18]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetLastName" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetLastName -->
+        <test-method signature="dynamicTestStudentGetterGetAge()[pri:100, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@346d61be, instance params:[владимир, Петров, 34, Владимир, Петров, 34]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetAge" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetAge -->
+        <test-method signature="dynamicTestStudentGetterGetAge()[pri:100, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@3e6ef8ad, instance params:[Александр, иванов, 55, Александр, Иванов, 18]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetAge" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetAge -->
+        <test-method signature="dynamicTestStudentGetterGetAge()[pri:100, instance:online_tusur.unit_online_tusur.StudentTestNGZ6@55536d9e, instance params:[Алексей, алексеев, 18, Алексей, Алексеев, 18]]" started-at="2022-06-03T01:13:04 YEKT" name="dynamicTestStudentGetterGetAge" finished-at="2022-06-03T01:13:04 YEKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dynamicTestStudentGetterGetAge -->
+      </class> <!-- online_tusur.unit_online_tusur.StudentTestNGZ6 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
