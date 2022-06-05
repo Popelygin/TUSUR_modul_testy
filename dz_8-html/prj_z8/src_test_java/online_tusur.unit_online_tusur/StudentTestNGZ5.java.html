@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StudentTestNGZ5.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">StudentTestZ8 (3 июн. 2022 г. 02:40:20)</a> &gt; <a href="../../index.html" class="el_group">prj_z8</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">StudentTestNGZ5.java</span></div><h1>StudentTestNGZ5.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+
+<span class="nc" id="L11">public class StudentTestNGZ5 </span>
+{
+	
+	@DataProvider(name=&quot;data&quot;)
+	public Object[][][] getName()
+	{
+<span class="nc" id="L17">		return new Object[][][]</span>
+<span class="nc" id="L18">				{</span>
+<span class="nc" id="L19">					{</span>
+<span class="nc" id="L20">						{ &quot;Иванов&quot;, &quot;Иван&quot;, 25 },</span>
+<span class="nc" id="L21">						{ &quot;Петров&quot;, &quot;Пётр&quot;, 33 },</span>
+<span class="nc" id="L22">						{ &quot;Сидоров&quot;, &quot;Антон&quot;, 42}</span>
+					},
+					
+<span class="nc" id="L25">					{</span>
+<span class="nc" id="L26">						{ &quot;Аксёнова&quot;, &quot;Ольга&quot;, 21 },</span>
+<span class="nc" id="L27">						{ &quot;Рыбаков&quot;, &quot;Александр&quot;, 40 }</span>
+					},
+					
+<span class="nc" id="L30">					{</span>
+<span class="nc" id="L31">						{ &quot;Мельников&quot;, &quot;Николай&quot;, 27 }</span>
+					}
+				};
+	}
+	
+	
+	/* 
+	 * Параметризированный тест для метода расчёта среднего возраста avgAge().
+	 * Использование @DataProvider.
+	 */
+	@Test(dataProvider=&quot;data&quot;, priority=1, timeOut=150)
+	void testAvgAge(Object[][] str_arr)
+	{	  
+	
+		// Количество студентов в массиве.
+<span class="nc" id="L46">		int cntStudents = str_arr.length;</span>
+		
+		// Массив студентов.
+<span class="nc" id="L49">		Student[] student = new Student[cntStudents];</span>
+		
+		// Счётчик суммы возраста.
+<span class="nc" id="L52">		int sumAge = 0; </span>
+
+<span class="nc bnc" id="L54" title="All 2 branches missed.">		for (int i = 0; i &lt; cntStudents; i++)</span>
+			{		  				  
+				// Фамилия.
+<span class="nc" id="L57">				String lastName = str_arr[i][0].toString();			  </span>
+				// Имя.
+<span class="nc" id="L59">				String firstName = str_arr[i][1].toString();</span>
+				// Возраст.
+<span class="nc" id="L61">				int age = ((Integer)str_arr[i][2]).intValue();</span>
+				
+				// Считаем сумму.
+<span class="nc" id="L64">				sumAge += age;</span>
+					  
+				// Создание и инициализация объекта класса Student.
+<span class="nc" id="L67">				student[i] = new Student(lastName, firstName, age);</span>
+			}		  
+
+		// Рассчитанный вручную ожидаемый средний возраст.
+<span class="nc" id="L71">		double expectedAvgAge = sumAge / cntStudents;</span>
+		// Рассчитанный методом средний возраст.
+<span class="nc" id="L73">		double actualAvgAge = Student.avgAge(student);</span>
+<span class="nc" id="L74">		assertEquals(expectedAvgAge, actualAvgAge);</span>
+<span class="nc" id="L75">	}</span>
+	
+	
+	/*
+	 * Проверка возраста студента, выходящего за диапазон.
+	 * Использование @Parameters.
+	 */
+		@Test(priority=2, timeOut=50)
+		@Parameters({&quot;age&quot;})
+		void testAgeOut(@Optional(&quot;100500&quot;) int age) 
+		{
+<span class="nc" id="L86">			Student s = new Student();</span>
+			
+<span class="nc" id="L88">			s.setAge(age);</span>
+			
+<span class="nc" id="L90">			int expectedAge = 18;</span>
+<span class="nc" id="L91">			int actualAge = s.getAge();</span>
+			
+<span class="nc" id="L93">			assertEquals(expectedAge, actualAge);</span>
+<span class="nc" id="L94">		}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>StudentTestZ8 (3 июн. 2022 г. 02:40:20)</div></body></html>

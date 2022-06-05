@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StudentTestZ4.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">StudentTestZ8 (3 июн. 2022 г. 02:40:20)</a> &gt; <a href="../../index.html" class="el_group">prj_z8</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">StudentTestZ4.java</span></div><h1>StudentTestZ4.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.DynamicContainer.dynamicContainer;
+
+import org.junit.jupiter.api.function.Executable;
+
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+import org.junit.jupiter.api.DynamicContainer;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
+
+
+<span class="nc" id="L20">public class StudentTestZ4 </span>
+{
+	/*
+	 * Динамический тест для геттера getLastName() класса Student.
+	 */
+	@TestFactory
+	Collection&lt;DynamicTest&gt; dynamicTestStudentGetterGetLastName() 
+	{
+		// Создаём список студентов.
+<span class="nc" id="L29">		ArrayList&lt;Student&gt; student = new ArrayList&lt;Student&gt;();</span>
+		// Добавляем в список студентов, вызывая конструктор класса Student.
+<span class="nc" id="L31">		student.add(new Student(&quot;Александр&quot;, &quot;иванов&quot;, 55));</span>
+<span class="nc" id="L32">		student.add(new Student(&quot;Владимир&quot;, &quot;Петров&quot;, 34));</span>
+<span class="nc" id="L33">		student.add(new Student(&quot;Алексей&quot;, &quot;алексеев&quot;, 18));</span>
+
+<span class="nc" id="L35">		List&lt;String&gt; exp = Arrays.asList(&quot;Иванов&quot;, &quot;Петров&quot;, &quot;Алексеев&quot;);</span>
+
+<span class="nc" id="L37">		ArrayList&lt;DynamicTest&gt; res = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L39" title="All 2 branches missed.">		for (int i = 0; i &lt; student.size(); i++) </span>
+		{
+<span class="nc" id="L41">			String firstName = student.get(i).getFirstName();</span>
+<span class="nc" id="L42">			String lastName = student.get(i).getLastName();</span>
+<span class="nc" id="L43">			int age = student.get(i).getAge();</span>
+			
+<span class="nc" id="L45">			String r = exp.get(i);</span>
+
+<span class="nc" id="L47">			DynamicTest dTest = dynamicTest(&quot;test&quot; + i + &quot; { &quot; + firstName + &quot;, &quot; + </span>
+<span class="nc" id="L48">					lastName + &quot;, &quot; + age + &quot; }&quot;, () -&gt; {assertEquals(r, lastName);});</span>
+			
+			// Записываем тест в коллецию res на каждой итерации цикла.
+<span class="nc" id="L51">			res.add(dTest);</span>
+		}
+	
+<span class="nc" id="L54">		return res;</span>
+	}
+
+	
+	/*
+	 * Динамический тест для геттера getFirstName() класса Student.
+	 */
+	@TestFactory
+	Collection&lt;DynamicTest&gt; dynamicTestStudentGetterGetFirstName() 
+	{
+		// Создаём список студентов.
+<span class="nc" id="L65">		ArrayList&lt;Student&gt; student = new ArrayList&lt;Student&gt;();</span>
+		// Добавляем в список студентов, вызывая конструктор класса Student.
+<span class="nc" id="L67">		student.add(new Student(&quot;Александр&quot;, &quot;Иванов&quot;, 55));</span>
+<span class="nc" id="L68">		student.add(new Student(&quot;владимир&quot;, &quot;Петров&quot;, 34));</span>
+<span class="nc" id="L69">		student.add(new Student(&quot;Алексей&quot;, &quot;Алексеев&quot;, 18));</span>
+
+<span class="nc" id="L71">		List&lt;String&gt; exp = Arrays.asList(&quot;Александр&quot;, &quot;Владимир&quot;, &quot;Алексей&quot;);</span>
+
+<span class="nc" id="L73">		ArrayList&lt;DynamicTest&gt; res = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L75" title="All 2 branches missed.">		for (int i = 0; i &lt; student.size(); i++) </span>
+		{
+<span class="nc" id="L77">			String firstName = student.get(i).getFirstName();</span>
+<span class="nc" id="L78">			String lastName = student.get(i).getLastName();</span>
+<span class="nc" id="L79">			int age = student.get(i).getAge();</span>
+			
+<span class="nc" id="L81">			String r = exp.get(i);</span>
+
+<span class="nc" id="L83">			DynamicTest dTest = dynamicTest(&quot;test&quot; + i + &quot; { &quot; + firstName + &quot;, &quot; + </span>
+<span class="nc" id="L84">					lastName + &quot;, &quot; + age + &quot; }&quot;, () -&gt; {assertEquals(r, firstName);});</span>
+			
+			// Записываем тест в коллецию res на каждой итерации цикла.
+<span class="nc" id="L87">			res.add(dTest);</span>
+		}
+	
+<span class="nc" id="L90">		return res;</span>
+	}
+	
+	
+	/*
+	 * Динамический тест для геттера getAge() класса Student.
+	 */
+	@TestFactory
+	Collection&lt;DynamicTest&gt; dynamicTest0StudentGetterGetAge() 
+	{
+		// Создаём список студентов.
+<span class="nc" id="L101">		ArrayList&lt;Student&gt; student = new ArrayList&lt;Student&gt;();</span>
+		// Добавляем в список студентов, вызывая конструктор класса Student.
+<span class="nc" id="L103">		student.add(new Student(&quot;Александр&quot;, &quot;Иванов&quot;, 55));</span>
+<span class="nc" id="L104">		student.add(new Student(&quot;Владимир&quot;, &quot;Петров&quot;, 34));</span>
+<span class="nc" id="L105">		student.add(new Student(&quot;Алексей&quot;, &quot;Алексеев&quot;, 18));</span>
+
+<span class="nc" id="L107">		List&lt;Integer&gt; exp = Arrays.asList(18, 34, 18);</span>
+
+<span class="nc" id="L109">		ArrayList&lt;DynamicTest&gt; res = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L111" title="All 2 branches missed.">		for (int i = 0; i &lt; student.size(); i++) </span>
+		{
+<span class="nc" id="L113">			String firstName = student.get(i).getFirstName();</span>
+<span class="nc" id="L114">			String lastName = student.get(i).getLastName();</span>
+<span class="nc" id="L115">			int age = student.get(i).getAge();</span>
+			
+<span class="nc" id="L117">			int r = exp.get(i);</span>
+
+<span class="nc" id="L119">			DynamicTest dTest = dynamicTest(&quot;test&quot; + i + &quot; { &quot; + firstName + &quot;, &quot; + </span>
+<span class="nc" id="L120">					lastName + &quot;, &quot; + age + &quot; }&quot;, () -&gt; {assertEquals(r, age);});</span>
+			
+			// Записываем тест в коллецию res на каждой итерации цикла.
+<span class="nc" id="L123">			res.add(dTest);</span>
+		}
+	
+<span class="nc" id="L126">		return res;</span>
+	}
+	
+	
+	/*
+	 * Динамический тест для геттера getAge() класса Student.
+	 */
+	@TestFactory
+	Collection&lt;DynamicTest&gt; dynamicTest1StudentGetterGetAge() 
+	{
+		// Тестовый студент: экземпляр класса Student.
+<span class="nc" id="L137">		Student student = new Student();</span>
+
+<span class="nc" id="L139">		List&lt;Integer&gt; act = Arrays.asList(55, 34, 48);</span>
+<span class="nc" id="L140">		List&lt;Integer&gt; exp = Arrays.asList(18, 34, 48);</span>
+
+<span class="nc" id="L142">		ArrayList&lt;DynamicTest&gt; res = new ArrayList&lt;&gt;();</span>
+
+		// Перебор в цикле всех элементов коллекции-списка act.
+<span class="nc bnc" id="L145" title="All 2 branches missed.">		for (int i = 0; i &lt; act.size(); i++) </span>
+		{
+<span class="nc" id="L147">			student.setAge(act.get(i));</span>
+			
+<span class="nc" id="L149">			int cur_age = student.getAge();</span>
+<span class="nc" id="L150">			int exp_age = exp.get(i);</span>
+
+			// Создание выполнения теста на каждой итерации.
+<span class="nc" id="L153">			Executable exec = () -&gt; assertEquals(exp_age, cur_age);</span>
+
+			/* Формирование одного теста из отображаемого имени, 
+			 * которое будет отображаться в отчёте JUnit и расширения Executable на каждой итерации. 
+			 * Итого в примере будет 3 таких теста.
+			 */
+<span class="nc" id="L159">			DynamicTest dTest = dynamicTest(&quot;test&quot; + i + &quot; { age=&quot; + cur_age + &quot; }&quot;, exec);</span>
+
+			// Записываем тест в коллецию res на каждой итерации цикла.
+<span class="nc" id="L162">			res.add(dTest);</span>
+		}
+
+<span class="nc" id="L165">		return res;</span>
+	}
+		
+	
+	/*
+	 * Коллекция из DynamicContainer с позитивными и негативными тестами из GroupTesting.
+	 */
+	@TestFactory
+	Collection&lt;DynamicContainer&gt; dynamicContainerFromCollection() 
+	{
+		// Объект класса GroupTesting с ранее разработанными позитивными и негативными тестами.
+<span class="nc" id="L176">		GroupTesting groupTesting = new GroupTesting();</span>
+		
+		// Возвращаем список из динамических тестов dynamicTest.
+<span class="nc" id="L179">		return Arrays.asList</span>
+				(      
+<span class="nc" id="L181">						dynamicContainer</span>
+						(
+<span class="nc" id="L183">								&quot;--- Позитивные и негативные тесты ---&quot;,</span>
+<span class="nc" id="L184">								Arrays.asList</span>
+								(
+<span class="nc" id="L186">										dynamicContainer</span>
+										(
+<span class="nc" id="L188">												&quot;-- Позитивные тесты --&quot;,</span>
+<span class="nc" id="L189">													Arrays.asList</span>
+													(
+<span class="nc" id="L191">															dynamicTest(&quot;- Первый позитивный тест { test_assert1() } -&quot;,</span>
+<span class="nc" id="L192">																	() -&gt; groupTesting.test_assert1()),</span>
+
+<span class="nc" id="L194">															dynamicTest(&quot;- Второй позитивный тест { test_assert3() } -&quot;,</span>
+<span class="nc" id="L195">																	() -&gt; groupTesting.test_assert3()),</span>
+	                         
+<span class="nc" id="L197">															dynamicTest(&quot;- Третий позитивный тест { test_assert5() } -&quot;,</span>
+<span class="nc" id="L198">																	() -&gt; groupTesting.test_assert5())</span>
+													)
+										 ),                            
+
+<span class="nc" id="L202">										dynamicContainer</span>
+										(
+<span class="nc" id="L204">												&quot;-- Негативные тесты --&quot;,</span>
+<span class="nc" id="L205">												Arrays.asList</span>
+												(
+<span class="nc" id="L207">														dynamicTest(&quot;- Первый негативный тест { test_assert2() } -&quot;,</span>
+<span class="nc" id="L208">																() -&gt; groupTesting.test_assert2()),</span>
+														
+<span class="nc" id="L210">														dynamicTest(&quot;- Второй негативный тест { test_assert4() } -&quot;,</span>
+<span class="nc" id="L211">																() -&gt; groupTesting.test_assert4()),</span>
+														
+<span class="nc" id="L213">														dynamicTest(&quot;- Третий негативный тест { test_assert6() } -&quot;,</span>
+<span class="nc" id="L214">																() -&gt; groupTesting.test_assert6())</span>
+
+												)
+										)
+								)
+						)
+	             );
+		}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>StudentTestZ8 (3 июн. 2022 г. 02:40:20)</div></body></html>

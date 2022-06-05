@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StudentTestNGZ6.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">StudentTestZ8 (3 июн. 2022 г. 02:40:20)</a> &gt; <a href="../../index.html" class="el_group">prj_z8</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">StudentTestNGZ6.java</span></div><h1>StudentTestNGZ6.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+
+
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+
+
+public class StudentTestNGZ6 
+{
+	private String firstNameActual;
+	private String lastNameActual;	
+	private int ageActual;
+	private String firstNameExpected;
+	private String lastNameExpected;	
+	private int ageExpected;
+
+	
+	@Factory(dataProvider=&quot;data&quot;)
+<span class="nc" id="L22">	public StudentTestNGZ6(String firstNameActual, String lastNameActual, int ageActual,</span>
+			String firstNameExpected, String lastNameExpected, int ageExpected)
+	{
+		// Считывание данных из @DataProvider(name=&quot;data&quot;).
+<span class="nc" id="L26">		this.firstNameActual = firstNameActual;</span>
+<span class="nc" id="L27">		this.lastNameActual = lastNameActual;</span>
+<span class="nc" id="L28">		this.ageActual = ageActual;</span>
+		
+<span class="nc" id="L30">		this.firstNameExpected = firstNameExpected;</span>
+<span class="nc" id="L31">		this.lastNameExpected = lastNameExpected;</span>
+<span class="nc" id="L32">		this.ageExpected = ageExpected;</span>
+<span class="nc" id="L33">	}</span>
+
+	
+	@DataProvider(name=&quot;data&quot;)
+	public static Object[][] dataMethod() {
+<span class="nc" id="L38">		return new Object[][]</span>
+<span class="nc" id="L39">				{</span>
+<span class="nc" id="L40">					{ &quot;Александр&quot;, &quot;иванов&quot;, 55, &quot;Александр&quot;, &quot;Иванов&quot;, 18 },</span>
+<span class="nc" id="L41">					{ &quot;владимир&quot;, &quot;Петров&quot;, 34, &quot;Владимир&quot;, &quot;Петров&quot;, 34 },</span>
+<span class="nc" id="L42">					{ &quot;Алексей&quot;, &quot;алексеев&quot;, 18, &quot;Алексей&quot;, &quot;Алексеев&quot;, 18 }</span>
+				};
+	}
+
+	
+	/*
+	 * Динамический тест для геттера getFirstName() класса Student.
+	 */
+	@Test(priority=1)
+	public void dynamicTestStudentGetterGetFirstName() 
+	{
+<span class="nc" id="L53">		String firstName = firstNameActual;</span>
+<span class="nc" id="L54">		String lastName = lastNameActual;</span>
+<span class="nc" id="L55">		int age = ageActual;</span>
+		
+<span class="nc" id="L57">		Student student = new Student(firstName, lastName, age);		</span>
+		
+<span class="nc" id="L59">		assertEquals(student.getFirstName(), firstNameExpected);</span>
+		
+<span class="nc" id="L61">		System.out.println(&quot;Тест dynamicTestStudentGetterGetFirstName: [&quot; + </span>
+<span class="nc" id="L62">				firstName + &quot;; &quot; + lastName + &quot;; &quot; + Integer.toString(age) + &quot;]&quot;);</span>
+<span class="nc" id="L63">	}</span>
+	
+	
+	/*
+	 * Динамический тест для геттера getLastName() класса Student.
+	 */
+	@Test(priority=10)
+	public void dynamicTestStudentGetterGetLastName() 
+	{
+<span class="nc" id="L72">		String firstName = firstNameActual;</span>
+<span class="nc" id="L73">		String lastName = lastNameActual;</span>
+<span class="nc" id="L74">		int age = ageActual;</span>
+		
+<span class="nc" id="L76">		Student student = new Student(firstName, lastName, age);</span>
+
+<span class="nc" id="L78">		assertEquals(student.getLastName(), lastNameExpected);</span>
+		
+<span class="nc" id="L80">		System.out.println(&quot;Тест dynamicTestStudentGetterGetLastName: [&quot; + </span>
+<span class="nc" id="L81">				firstName + &quot;; &quot; + lastName + &quot;; &quot; + Integer.toString(age) + &quot;]&quot;);</span>
+<span class="nc" id="L82">	}</span>
+	
+	
+	/*
+	 * Динамический тест для геттера getAge() класса Student.
+	 */
+	@Test(priority=100)
+	public void dynamicTestStudentGetterGetAge() 
+	{
+<span class="nc" id="L91">		String firstName = firstNameActual;</span>
+<span class="nc" id="L92">		String lastName = lastNameActual;</span>
+<span class="nc" id="L93">		int age = ageActual;</span>
+		
+<span class="nc" id="L95">		Student student = new Student(firstName, lastName, age);</span>
+
+<span class="nc" id="L97">		assertEquals(student.getAge(), ageExpected);</span>
+		
+<span class="nc" id="L99">		System.out.println(&quot;Тест dynamicTestStudentGetterGetAge: [&quot; + </span>
+<span class="nc" id="L100">				firstName + &quot;; &quot; + lastName + &quot;; &quot; + Integer.toString(age) + &quot;]&quot;);</span>
+<span class="nc" id="L101">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>StudentTestZ8 (3 июн. 2022 г. 02:40:20)</div></body></html>

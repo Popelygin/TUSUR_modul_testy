@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StudentTestZ3.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">StudentTestZ8 (3 июн. 2022 г. 02:40:20)</a> &gt; <a href="../../index.html" class="el_group">prj_z8</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">StudentTestZ3.java</span></div><h1>StudentTestZ3.java</h1><pre class="source lang-java linenums">package online_tusur.unit_online_tusur;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
+import org.junit.jupiter.params.provider.CsvSource;
+
+<span class="nc" id="L9">public class StudentTestZ3 </span>
+{
+	/*
+	 * Параметризированный тест для метода расчёта среднего возраста avgAge(),
+	 * используя аннотацию @CsvSource.
+	 */
+	@ParameterizedTest(name = &quot;Подтест {index}: {0}, {1}, {2}, {3}, {4}, ...&quot;)
+	@CsvSource(value = {
+			  &quot;Иванов, Иван, 25, Петров, Пётр, 33, Сидоров, Антон, 42&quot;, 
+			  &quot;Аксёнова, Ольга, 21, Рыбаков, Александр, 40&quot;,
+			  &quot;Мельников, Николай, 27&quot;
+			  			 })
+	void testAvgAge(ArgumentsAccessor argumentsAccessor)
+	{
+		// Количество аргументов в csv-строке.
+<span class="nc" id="L24">		int cntArguments = argumentsAccessor.size();</span>
+		// Количество студентов = количество аргументов в csv-строке / 3.
+<span class="nc" id="L26">		int cntStudents =  cntArguments / 3;</span>
+		  
+		// Массив студентов.
+<span class="nc" id="L29">		Student[] student = new Student[cntStudents];		  </span>
+		// Счётчик суммы возраста.
+<span class="nc" id="L31">		int sumAge = 0; </span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">		for (int i = 0; i &lt; cntStudents; i++)</span>
+		{		  
+			// Позиция аргумента в строке.
+<span class="nc" id="L35">			int posArgument = i * 3;</span>
+			  
+			// Фамилия.
+<span class="nc" id="L38">			String lastName = argumentsAccessor.get(posArgument, String.class);			  </span>
+			// Имя.
+<span class="nc" id="L40">			String firstName = argumentsAccessor.get(posArgument + 1, String.class);</span>
+			// Возраст.
+<span class="nc" id="L42">			int age = argumentsAccessor.get(posArgument + 2, Integer.class);</span>
+			// Считаем сумму.
+<span class="nc" id="L44">			sumAge += age;</span>
+			  
+			// Создание и инициализация объекта класса Student.
+<span class="nc" id="L47">			student[i] = new Student(lastName, firstName, age);</span>
+		}
+		
+		// Рассчитанный вручную ожидаемый средний возраст.
+<span class="nc" id="L51">		double expectedAvgAge = sumAge / cntStudents;</span>
+		// Рассчитанный методом средний возраст.
+<span class="nc" id="L53">		double actualAvgAge = Student.avgAge(student);</span>
+		
+<span class="nc" id="L55">		assertEquals(expectedAvgAge, actualAvgAge);</span>
+<span class="nc" id="L56">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>StudentTestZ8 (3 июн. 2022 г. 02:40:20)</div></body></html>
